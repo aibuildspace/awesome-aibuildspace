@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="100" viewBox="0 0 900 100">
+  <defs>
+    <linearGradient id="fbg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f0c29">
+        <animate attributeName="stop-color" values="#0f0c29;#1a1a2e;#0f0c29" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#302b63">
+        <animate attributeName="stop-color" values="#302b63;#533483;#302b63" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#24243e">
+        <animate attributeName="stop-color" values="#24243e;#0f0c29;#24243e" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <pattern id="fgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(100,100,255,0.06)" stroke-width="0.5"/>
+    </pattern>
+
+    <linearGradient id="topfade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,110,199,0.1)"/>
+      <stop offset="40%" stop-color="transparent"/>
+    </linearGradient>
+
+    <filter id="fsparkle">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="100" fill="url(#fbg)" rx="8"/>
+  <rect width="900" height="100" fill="url(#fgrid)" rx="8"/>
+  <rect width="900" height="100" fill="url(#topfade)" rx="8"/>
+
+  <!-- Corner brackets -->
+  <g stroke="#00f0ff" stroke-width="1.5" fill="none" opacity="0.3">
+    <path d="M 30,15 L 20,15 L 20,25"/>
+    <path d="M 870,15 L 880,15 L 880,25"/>
+    <path d="M 30,85 L 20,85 L 20,75"/>
+    <path d="M 870,85 L 880,85 L 880,75"/>
+  </g>
+
+  <!-- Pulsing stars -->
+  <g filter="url(#fsparkle)">
+    <circle cx="100" cy="50" r="1" fill="#00f0ff">
+      <animate attributeName="r" values="0.8;2;0.8" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="40" r="1" fill="#ff6ec7">
+      <animate attributeName="r" values="0.6;1.8;0.6" dur="2.8s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.8s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="450" cy="30" r="0.8" fill="#bc13fe">
+      <animate attributeName="r" values="0.5;1.5;0.5" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+  </g>
+
+  <text x="450" y="58" text-anchor="middle" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-weight="300" font-size="12" fill="#8892b0" letter-spacing="4" opacity="0.6">
+    CONTRIBUTE FREELY  ·  CC0
+  </text>
+</svg>
